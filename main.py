@@ -2,7 +2,8 @@
 import pygame
 from checkers.constants import WIDTH, HEIGHT, SQUARE_SIZE, RED, WHITE
 from checkers.game import Game
-from minimax.algorithm import minimax
+from minimax.ai_vs_ai import minimax
+# from minimax.algorithm import minimax
 
 FPS = 60
 
@@ -22,7 +23,13 @@ def main():
 
     while run:
         clock.tick(FPS)
-        
+
+        ############## comment when playing human vs ai #################
+        if game.turn == RED:
+            value, new_board = minimax(game.get_board(), 4, RED, game)
+            game.ai_move(new_board)
+        #################################################################
+
         if game.turn == WHITE:
             value, new_board = minimax(game.get_board(), 4, WHITE, game)
             game.ai_move(new_board)
