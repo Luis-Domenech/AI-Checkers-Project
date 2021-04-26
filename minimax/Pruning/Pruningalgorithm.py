@@ -6,7 +6,7 @@ WHITE = (255, 255, 255)
 
 def minimax(position, depth, max_player, game):
     if depth == 0 or position.winner() != None:
-        return position.evaluate(), position
+        return position.evaluate_white(), position
     
     if max_player:
         maxEval = float('-inf')
