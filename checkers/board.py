@@ -1,5 +1,5 @@
 import pygame
-from .constants import BLACK, ROWS, RED, SQUARE_SIZE, COLS, WHITE
+from .constants import BLACK, ROWS, RED, SQUARE_SIZE, COLS, WHITE, WHITE_NAME, RED_NAME
 from .piece import Piece
 
 class Board:
@@ -76,9 +76,9 @@ class Board:
     
     def winner(self):
         if self.red_left <= 0:
-            return WHITE
+            return WHITE_NAME
         elif self.white_left <= 0:
-            return RED
+            return RED_NAME
         
         return None 
     

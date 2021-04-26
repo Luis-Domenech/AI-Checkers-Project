@@ -4,6 +4,9 @@ WIDTH, HEIGHT = 800, 800
 ROWS, COLS = 8, 8
 SQUARE_SIZE = WIDTH//COLS
 
+WHITE_NAME = "Minimax"
+RED_NAME = "Random"
+
 # rgb
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
