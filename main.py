@@ -33,13 +33,12 @@ def main(games = 10):
 
             ############## comment when playing human vs ai #################
             if game.turn == RED:
-                # value, new_board = minimax(game.get_board(), 4, RED, game)
-                value, new_board = randomAI(game.get_board(), RED, game)
+                value, new_board = minimax(game.get_board(), 4, RED, game)
+                # value, new_board = randomAI(game.get_board(), RED, game)
                 
                 # This means we won as moves left are impossible
                 if new_board is None:
-                    print(1)
-                    print("Game", i, "Winner:", WHITE_NAME)
+                    print("Game", i + 1, "Winner:", WHITE_NAME)
                     winners.append(WHITE_NAME)
                     allTurns.append(turns)
                     break
@@ -53,8 +52,7 @@ def main(games = 10):
 
                 # This means we lost
                 if new_board is None:
-                    print(2)
-                    print("Game", i, "Winner:", RED_NAME)
+                    print("Game", i + 1, "Winner:", RED_NAME)
                     winners.append(RED_NAME)
                     allTurns.append(turns)
                     break
@@ -64,8 +62,7 @@ def main(games = 10):
 
 
             if game.winner() is not None:
-                print(3)
-                print("Game", i, "Winner:", game.winner())
+                print("Game", i + 1, "Winner:", game.winner())
                 winners.append(game.winner())
                 allTurns.append(turns)
                 break       
@@ -81,7 +78,7 @@ def main(games = 10):
                     pos = pygame.mouse.get_pos()
                     row, col = get_row_col_from_mouse(pos)
                     game.select(row, col)
-        print("Turns:", turns)
+        
     pygame.quit()
 
     with open('winners.csv', mode='w') as csv_file:
