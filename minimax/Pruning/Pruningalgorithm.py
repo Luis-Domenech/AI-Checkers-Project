@@ -1,5 +1,5 @@
 from copy import deepcopy
-import pygamw
+import pygame
 
 RED = (255,0,0)
 WHITE = (255, 255, 255)
