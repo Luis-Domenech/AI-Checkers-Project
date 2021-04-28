@@ -34,7 +34,7 @@ def main(games = 10):
             ############## comment when playing human vs ai #################
             if game.turn == RED:
                 # value, new_board = minimax(game.get_board(), 4, RED, game)
-                value, new_board = minimax(game.get_board(), RED, game)
+                value, new_board = randomAI(game.get_board(), RED, game)
                 
                 # This means we won as moves left are impossible
                 if new_board is None:
